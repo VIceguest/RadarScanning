@@ -30,19 +30,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Lazy Loading
-
--(VIGRadarView *)radarView
-{
-    if (!_radarView) {
-        CGRect parentFrame = self.view.frame;
-        _radarView = [[VIGRadarView alloc] initWithFrame:CGRectMake(0, 50, parentFrame.size.width, parentFrame.size.height -50)];
-        _radarView.scanSpeed = 0.5;
-        [self.view addSubview:_radarView];
-    }
-    return _radarView;
-}
-
 #pragma mark - IBActions
 
 - (IBAction)onStartScanButtonTouchUpInside:(id)sender {
@@ -51,6 +38,18 @@
 
 - (IBAction)onStopScanButtonTouchUpInside:(id)sender {
     [self.radarView stop];
+}
+
+#pragma mark - Getter and Setter
+
+-(VIGRadarView *)radarView {
+    if (!_radarView) {
+        CGRect parentFrame = self.view.frame;
+        _radarView = [[VIGRadarView alloc] initWithFrame:CGRectMake(0, 50, parentFrame.size.width, parentFrame.size.height -50)];
+        _radarView.scanSpeed = 0.5;
+        [self.view addSubview:_radarView];
+    }
+    return _radarView;
 }
 
 @end

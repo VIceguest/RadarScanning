@@ -7,7 +7,6 @@
 //
 
 #import "VIGRadarView.h"
-#import "UIColor+Hex.h"
 
 @interface VIGRadarView ()
 
@@ -45,7 +44,7 @@
 - (void)configureSelfView
 {
     self.userInteractionEnabled = YES;
-    self.backgroundColor = [UIColor colorWithHex:0x000000 alpha:0.15f];
+    self.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.15f];
     [self configureRadiusArray];
 }
 
@@ -75,7 +74,6 @@
 -(UILabel *)startLoadingLabel
 {
     if (!_startLoadingLabel) {
-        
         NSString *labelText = @"正在搜索...";
         CGFloat labelWidth = [self characterWidth:labelText withFont:[UIFont systemFontOfSize:11]];
         
@@ -128,54 +126,54 @@
 {
     NSMutableArray *tempArray = [NSMutableArray new];
     
-//    for (int i = 0; i < self.arrNearAirBoxes.count; i++) {
-//        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-//        imageView.backgroundColor = [UIColor clearColor];
-//        imageView.image = [UIImage imageNamed:@"other"];
-//        
-//        
-//        CGFloat angle = arc4random()%360;
-//        
-//
-//        CGFloat fixedAngle = angle/360 * (M_PI * 2);
-//        
-//        if (i == self.arrNearAirBoxes.count - 1) {
-//            if (fixedAngle >= 3 * M_PI_4 && fixedAngle <= 5 * M_PI_4) {
-//                fixedAngle = 6 * M_PI_4;
-//            }else if (fixedAngle >= 7 * M_PI_4 && fixedAngle <= 8 * M_PI_4){
-//                fixedAngle = 2 * M_PI_4;
-//            } else if (fixedAngle >=0 && fixedAngle <= M_PI_4){
-//                fixedAngle = 2 * M_PI_4;
-//            }
-//        }
-//        
-//        CGFloat X = CGRectGetWidth(self.bounds)/2 + ([self.radiusArray[i] floatValue]*cos(fixedAngle));
-//        CGFloat Y = CGRectGetHeight(self.bounds)/2 + ([self.radiusArray[i] floatValue]*sin(fixedAngle));
-//        
-//        
-//        imageView.center = CGPointMake(X, Y);
-//        
-//        NSString *point = NSStringFromCGPoint(imageView.center);
-//        [tempArray addObject:point];
-//        
-//        
-//        [self addSubview:imageView];
-//        
-//        NSString *subTitleText = @"Test";
-//        
-//        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0,
-//                                                                   0,
-//                                                                   [self characterWidth:subTitleText withFont:[UIFont systemFontOfSize:9]],
-//                                                                   [self characterHeight:subTitleText withFont:[UIFont systemFontOfSize:9]])];
-//        label.center = CGPointMake(imageView.center.x,
-//                                   imageView.center.y + 10 + [self characterHeight:subTitleText withFont:[UIFont systemFontOfSize:9]]/2 + 8);
-//        label.backgroundColor = [UIColor clearColor];
-//        label.font = [UIFont systemFontOfSize:9];
-//        label.textAlignment = NSTextAlignmentCenter;
-//        label.textColor = [UIColor whiteColor];
-//        label.text = subTitleText;
-//        [self addSubview:label];
-//    }
+    for (int i = 0; i < 3; i++) {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+        imageView.backgroundColor = [UIColor clearColor];
+        imageView.image = [UIImage imageNamed:@"other"];
+        
+        
+        CGFloat angle = arc4random()%360;
+        
+
+        CGFloat fixedAngle = angle/360 * (M_PI * 2);
+        
+        if (i == 3 - 1) {
+            if (fixedAngle >= 3 * M_PI_4 && fixedAngle <= 5 * M_PI_4) {
+                fixedAngle = 6 * M_PI_4;
+            }else if (fixedAngle >= 7 * M_PI_4 && fixedAngle <= 8 * M_PI_4){
+                fixedAngle = 2 * M_PI_4;
+            } else if (fixedAngle >=0 && fixedAngle <= M_PI_4){
+                fixedAngle = 2 * M_PI_4;
+            }
+        }
+        
+        CGFloat X = CGRectGetWidth(self.bounds)/2 + ([self.radiusArray[i] floatValue]*cos(fixedAngle));
+        CGFloat Y = CGRectGetHeight(self.bounds)/2 + ([self.radiusArray[i] floatValue]*sin(fixedAngle));
+        
+        
+        imageView.center = CGPointMake(X, Y);
+        
+        NSString *point = NSStringFromCGPoint(imageView.center);
+        [tempArray addObject:point];
+        
+        
+        [self addSubview:imageView];
+        
+        NSString *subTitleText = @"";
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0,
+                                                                   0,
+                                                                   [self characterWidth:subTitleText withFont:[UIFont systemFontOfSize:9]],
+                                                                   [self characterHeight:subTitleText withFont:[UIFont systemFontOfSize:9]])];
+        label.center = CGPointMake(imageView.center.x,
+                                   imageView.center.y + 10 + [self characterHeight:subTitleText withFont:[UIFont systemFontOfSize:9]]/2 + 8);
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont systemFontOfSize:9];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = [UIColor whiteColor];
+        label.text = subTitleText;
+        [self addSubview:label];
+    }
     
     self.threePointsArray = tempArray;
 
@@ -215,26 +213,6 @@
         self.triangleImageView.backgroundColor = [UIColor clearColor];
         self.triangleImageView.image = [UIImage imageNamed:@"fukuang-1"];
     }
-}
-
-- (void)configureMyPointSubViews:(NSString *)loctionStr
-{
-    for(UIView *view in self.floatingImageView.subviews)
-    {
-        [view removeFromSuperview];
-    }
-    
-    CGSize size = [loctionStr sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]}];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.floatingImageView.frame) - size.width) / 2,
-                                                                    (CGRectGetHeight(self.floatingImageView.frame) - size.height) / 2,
-                                                                    size.width,
-                                                                    size.height)];
-    titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.textColor = [UIColor colorWithHex:0x000000 alpha:1.0f];
-    titleLabel.font = [UIFont systemFontOfSize:15];
-    titleLabel.text = loctionStr;
-    [self.floatingImageView addSubview:titleLabel];
-
 }
 
 #pragma mark - calucate

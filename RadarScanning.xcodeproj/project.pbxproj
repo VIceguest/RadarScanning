@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C1E6122D1C7B54B500B703E1 /* scanCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E612271C7B54B500B703E1 /* scanCircle.png */; };
 		C1E6122E1C7B54B500B703E1 /* scanPartCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E612281C7B54B500B703E1 /* scanPartCircle.png */; };
-		C1E6122F1C7B54B500B703E1 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E6122A1C7B54B500B703E1 /* UIColor+Hex.m */; };
 		C1E612301C7B54B500B703E1 /* VIGRadarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E6122C1C7B54B500B703E1 /* VIGRadarView.m */; };
 		C1E612411C7B54DF00B703E1 /* fukuang-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E612371C7B54DF00B703E1 /* fukuang-1.png */; };
 		C1E612421C7B54DF00B703E1 /* fukuang.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E612381C7B54DF00B703E1 /* fukuang.png */; };
@@ -46,8 +45,6 @@
 /* Begin PBXFileReference section */
 		C1E612271C7B54B500B703E1 /* scanCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanCircle.png; sourceTree = "<group>"; };
 		C1E612281C7B54B500B703E1 /* scanPartCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanPartCircle.png; sourceTree = "<group>"; };
-		C1E612291C7B54B500B703E1 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
-		C1E6122A1C7B54B500B703E1 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		C1E6122B1C7B54B500B703E1 /* VIGRadarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIGRadarView.h; sourceTree = "<group>"; };
 		C1E6122C1C7B54B500B703E1 /* VIGRadarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIGRadarView.m; sourceTree = "<group>"; };
 		C1E612371C7B54DF00B703E1 /* fukuang-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fukuang-1.png"; sourceTree = "<group>"; };
@@ -104,8 +101,6 @@
 				C1E612261C7B54B500B703E1 /* Picture */,
 				C1E6122B1C7B54B500B703E1 /* VIGRadarView.h */,
 				C1E6122C1C7B54B500B703E1 /* VIGRadarView.m */,
-				C1E612291C7B54B500B703E1 /* UIColor+Hex.h */,
-				C1E6122A1C7B54B500B703E1 /* UIColor+Hex.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -325,7 +320,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE8A1E761C7AE0870036ECE2 /* ViewController.m in Sources */,
-				C1E6122F1C7B54B500B703E1 /* UIColor+Hex.m in Sources */,
 				EE8A1E731C7AE0870036ECE2 /* AppDelegate.m in Sources */,
 				C1E612301C7B54B500B703E1 /* VIGRadarView.m in Sources */,
 				EE8A1E701C7AE0870036ECE2 /* main.m in Sources */,
